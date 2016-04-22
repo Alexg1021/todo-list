@@ -8,7 +8,7 @@ var toDoArray = JSON.parse(localStorage.listItems || null) || [];
 form.submit.disabled = true;
 
 /* ================= Event Listeners ====================== */
-//d
+//disables submit button if text area is empty
 form.addEventListener('input', function () {
     if (form.toDoItem.value.length > 0) {
         form.submit.disabled = false;
@@ -18,6 +18,7 @@ form.addEventListener('input', function () {
     }
 });
 
+//listens for a submit event and adds a new toDoItem
 form.addEventListener('submit', function (evt) {
     evt.preventDefault();
 
